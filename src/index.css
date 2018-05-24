@@ -1,0 +1,128 @@
+body {
+	font : 14px "Century Gothic", Futura, sans-serif;
+	margin: 20px;
+}
+
+ol, ul {
+	padding-left: 30px;
+}
+
+.board-row:after {
+	clear: both;
+	content: "";
+	display: table;
+}
+
+div#banner {
+       position: absolute;
+       top: 0;
+       left: 0;
+       background-color: #2c3e50;
+       width: 100%;
+			 display: block;
+     }
+div#banner-content {
+
+       width: 800px;
+       margin: 0 auto;
+       padding: 10px;
+       border: 1px solid #2c3e50;
+			 font-family: 'Inder', sans-serif;
+		 	 font-weight: 800;
+		 	 font-size: 48px;
+			 color: white;
+			 margin-left: 100px;
+}
+
+.symbol{
+	margin-bottom: 10px;
+	margin-top: 100px;
+	font-family: 'Inder', sans-serif;
+	font-weight: 800;
+	font-size: 18px;
+}
+.status {
+	font-family: 'Inder', sans-serif;
+	font-weight: 800;
+	font-size: 18px;
+	position: absolute;
+}
+
+.circle {
+    background-color:#fff;
+    border:1px solid red;
+    height:100px;
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    width:100px;
+}
+
+.circle2{
+	background-color: beige;
+	border: 1px solid #999;
+	padding: 30px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -200px;
+	margin-left: -200px;
+	width: 400px;
+	height: 400px;
+}
+
+.square:focus {
+	outline: none;
+}
+
+.kbd-navigation .square:focus {
+	background: #ddd;
+}
+
+.game {
+	display: flex;
+	flex-direction: row;
+}
+
+.game-board {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -150px;
+    width: 200px;
+    height: 200px;
+}​
+.game-info{
+	margin-left: 20px;
+}
+
+.btn {
+	margin-top: 20px;
+	margin-bottom: 20px;
+  box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid red;
+  border-radius: 0.6em;
+  color: red;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 1rem;
+  font-weight: 40;
+  line-height: 1;
+  margin-top: 70px;
+  padding: 1.2em 2.8em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 70;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    outline: 0;
+  }
+}
