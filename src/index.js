@@ -5,7 +5,7 @@ Date: Wed May 23 2018
 Description: Drop Token takes place on a 4x4 grid.
 A token is dropped along a column (labeled 0-3) and
 said token goes to the lowest unoccupied row of the board.
-A player wins when they have 4 tokens next to each other 
+A player wins when they have 4 tokens next to each other
 either along a row, in a column, or on a diagonal.
 If the board is filled, and nobody has won then the game is a draw.
 */
@@ -218,8 +218,9 @@ class Game extends React.Component {
     const first_move = <button class="btn" onClick={() => this.assignUserPlayer()}>Take First Move</button>
     /*to be displayed for user to click on X Move. onClick leads to X Move shown on board*/
     const getComputerMove = <button className="btn" onClick={() => this.makeXMove()}>Make X Move</button>;
-    const game_over = false;
-    const game_start = <div></div>
+    /*bool value to check if game has ended*/
+    let game_end;
+    game_end = false;
     /*to go back to a previous move. Game start in this case.*/
     const moves = allMoves.map((step, move) => {
       const desc = move ?
@@ -233,13 +234,13 @@ class Game extends React.Component {
     });
     let status;
     if (winner) {
-      this.game_over = true;
+      game_end = true;
       status = 'Result:  Winner: ' + winner;
     } else if (board_full) {
-      this.game_over = true;
+      game_end = true;
       status = 'Result:  Game Drawn';
     } else {
-      this.game_over = false;
+      game_end = false;
       status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
     }
     return (
@@ -263,7 +264,7 @@ class Game extends React.Component {
             <div className="status">{status}</div>
             {this.state.stepNumber === 0 && <div>{first_move}</div>}
             {this.state.xIsNext && <div>{getComputerMove}</div>}
-            <div>{this.game_over && moves}</div>
+            <div>{game_end && moves}</div>
         </div>
         </div>
       </div>
